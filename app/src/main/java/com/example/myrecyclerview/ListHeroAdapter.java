@@ -17,6 +17,11 @@ import java.util.ArrayList;
 
 public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListViewHolder> {
     private ArrayList<Hero> listHero;
+    private ListViewHolder.OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(ListViewHolder.OnItemClickCallback onItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback;
+    }
 
     public ListHeroAdapter(ArrayList<Hero> list){
         this.listHero = list;
@@ -39,6 +44,12 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
 
         holder.tvName.setText(hero.getName());
         holder.tvFrom.setText(hero.getFrom());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickCallback.onItemClicked(listHero.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
 
@@ -47,7 +58,7 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
         return listHero.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    static class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
         TextView tvName, tvFrom;
 
@@ -56,6 +67,9 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_item_name);
             tvFrom = itemView.findViewById(R.id.tv_item_from);
+        }
+        public interface OnItemClickCallback {
+            void onItemClicked(Hero data);
         }
     }
 }
