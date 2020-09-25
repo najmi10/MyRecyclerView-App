@@ -6,6 +6,5 @@ Pada Layout Manager bisa mengatur posisi tampilan data seperti contoh dibawah in
 ![AltText](https://github.com/najmi10/MyRecyclerView-App/blob/master/List2.png)
 # Menu Grid 
 Pada Layout Manager bisa mengatur posisi tampilan data seperti contoh dibawah ini.
-![AltText](https://github.com/najmi10/MyRecyclerView-App/blob/master/Grid1.png)
-![AltText](https://github.com/najmi10/MyRecyclerView-App/blob/master/Grid2.png)
+![AltText](https://github.com/najmi10/MyRecyclerView-App/blob/master/Grid1.png) ![AltText](https://github.com/najmi10/MyRecyclerView-App/blob/master/Grid2.png)
 ![AltText](https://github.com/najmi10/MyRecyclerView-App/blob/master/Grid3.png)
